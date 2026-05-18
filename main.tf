@@ -1,14 +1,14 @@
+locals {
+  pipeline_fingerprint = "FINOPS-S3-PIPELINE-FINGERPRINT-20260518"
+}
+
 terraform {
   required_version = ">= 1.4.0"
 
 }
 
-provider "aws" {
-  region = var.aws_region
-}
-
 module "kms" {
-  source = "git::codecommit://module-aws-kms?ref=v2"
+  source = "git::codecommit://module-aws-kms?ref=v1"
 
   alias_name   = "alias/finops-s3"
   description  = "KMS key for FinOps S3 bucket encryption"
