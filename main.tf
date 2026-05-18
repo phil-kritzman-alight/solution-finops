@@ -1,12 +1,6 @@
 terraform {
   required_version = ">= 1.4.0"
 
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">= 5.0"
-    }
-  }
 }
 
 provider "aws" {
@@ -22,7 +16,7 @@ module "kms" {
 }
 
 module "s3_bucket" {
-  source = "git::codecommit://module-aws-s3?ref=v2"
+  source = "git::codecommit://module-aws-s3?ref=v1"
 
   bucket_name = var.bucket_name
 
