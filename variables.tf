@@ -29,21 +29,6 @@ variable "suspend_versioning" {
   default     = false
 }
 
-variable "payer" {
-  type        = string
-  description = "Billing payer type"
-}
-
-variable "ou_security_type" {
-  type        = string
-  description = "OU security classification"
-}
-
-variable "aws_region" {
-  type        = string
-  description = "AWS region (informational; pipeline sets actual region)"
-}
-
 variable "tags" {
   type        = map(string)
   description = "Tags applied to resources"

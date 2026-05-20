@@ -1,0 +1,15 @@
+{
+  "git.autorefresh": true,
+
+  "files.watcherExclude": {
+    "**/.terraform/**": true
+  },
+
+  "search.exclude": {
+    "**/.terraform/**": true
+  },
+
+  "files.exclude": {
+    "**/.terraform": true
+  }
+}
