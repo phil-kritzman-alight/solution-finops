@@ -13,4 +13,5 @@ aws_region          = "us-east-1"
 
 tags = {
   DataClassification = "InternalUse"
+  BusinessServiceName = "Governance FinOps Prod"
 }
