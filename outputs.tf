@@ -1,9 +1,14 @@
 output "bucket_name" {
-  value       = module.s3_bucket.bucket_name
-  description = "S3 bucket name"
+  description = "Name of the S3 bucket"
+  value       = module.s3.bucket_name
 }
 
 output "bucket_arn" {
-  value       = module.s3_bucket.bucket_arn
-  description = "S3 bucket ARN"
+  description = "ARN of the S3 bucket"
+  value       = module.s3.bucket_arn
+}
+
+output "bucket_policy_arn" {
+  description = "ARN of the bucket policy"
+  value       = module.s3.bucket_policy_arn
 }

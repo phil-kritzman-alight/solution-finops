@@ -1,7 +1,21 @@
-variable "aws_region" {
+variable "application" {
   type        = string
-  description = "AWS region"
-  default     = "us-east-1"
+  description = "Application name"
+}
+
+variable "service" {
+  type        = string
+  description = "Service name"
+}
+
+variable "environment" {
+  type        = string
+  description = "Environment (dev, qa, prod)"
+}
+
+variable "is_production" {
+  type        = bool
+  description = "Is this a production deployment"
 }
 
 variable "bucket_name" {
@@ -9,7 +23,28 @@ variable "bucket_name" {
   description = "S3 bucket name"
 }
 
-variable "data_classification" {
+variable "suspend_versioning" {
+  type        = bool
+  description = "Whether to suspend versioning"
+  default     = false
+}
+
+variable "payer" {
   type        = string
-  description = "Data classification tag"
+  description = "Billing payer type"
+}
+
+variable "ou_security_type" {
+  type        = string
+  description = "OU security classification"
+}
+
+variable "aws_region" {
+  type        = string
+  description = "AWS region (informational; pipeline sets actual region)"
+}
+
+variable "tags" {
+  type        = map(string)
+  description = "Tags applied to resources"
 }
