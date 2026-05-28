@@ -33,3 +33,19 @@ variable "tags" {
   type        = map(string)
   description = "Tags applied to resources"
 }
+
+variable "service_2" {
+  type        = string
+  description = "Service name for second S3 bucket"
+}
+
+variable "bucket_name_2" {
+  type        = string
+  description = "S3 bucket name for second bucket"
+}
+
+variable "suspend_versioning_2" {
+  type        = bool
+  description = "Whether to suspend versioning for second bucket"
+  default     = false
+}
