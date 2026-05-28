@@ -49,3 +49,13 @@ variable "suspend_versioning_2" {
   description = "Whether to suspend versioning for second bucket"
   default     = false
 }
+
+variable "s3_retention_rules" {
+  type = list(object({
+    id     = string
+    prefix = string
+    days   = number
+  }))
+  description = "S3 retention rules for second bucket"
+  default     = []
+}
