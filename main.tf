@@ -24,7 +24,7 @@ module "s3_2" {
 
   bucket_name        = var.bucket_name_2
   suspend_versioning = var.suspend_versioning_2
-  s3_retention_rules = var.s3_retention_rules
+  lifecycle_rules    = var.lifecycle_rules
 
   kms_key_arn = ""
 

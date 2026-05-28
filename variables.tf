@@ -50,12 +50,15 @@ variable "suspend_versioning_2" {
   default     = false
 }
 
-variable "s3_retention_rules" {
-  type = list(object({
-    id     = string
-    prefix = string
-    days   = number
+variable "lifecycle_rules" {
+  type = map(object({
+    prefix                    = string
+    days                      = optional(number)
+    transition_to_ia          = optional(number)
+    transition_to_glacier     = optional(number)
+    tags                      = optional(map(string))
+    abort_multipart_days      = optional(number)
   }))
-  description = "S3 retention rules for second bucket"
-  default     = []
+  description = "Custom lifecycle rules for second bucket"
+  default     = {}
 }
